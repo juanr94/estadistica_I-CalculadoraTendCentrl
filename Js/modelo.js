@@ -30,7 +30,7 @@ class tendeciaCentral{
                 mayor = this.obtenerDatos()[i];
             }
         }
-        return mayor;
+        return mayor + 1;
     }
 
     nIntervalo(){
