@@ -29,10 +29,11 @@ aside div{
 }
 #logo{
     width: 200px;
-    /*float: left;*/
+    transition: 2s;
 }
-#titulo{
-    width: 90%;
+#titulos {
+   text-align: center;
+   width: 100%;
 }
 h1 {
     font: bold 40px verdana, sans-serif;
@@ -157,6 +158,27 @@ h2 {
     background: #5e91f2;
     color: white;
 }
+#tendencia-central{
+    display: table;
+    border-spacing: 10px;
+}
+#contenido{
+    display: table-row;
+}
+
+#titulo, #valores{
+    display: table-cell;
+    
+}
+
+#titulo{
+    width: 50%;
+}
+
+#valores{
+   width: 150px; 
+}
+
 
 footer{
     background: #003b8e;
@@ -171,21 +193,19 @@ footer a{
 }
 
 @media(max-width:975px){
- #contenedorTablaF{
-     margin-left: 120px ;
- }
-}
-
-@media(max-width:700px){
-
+    #contenedorTablaF{
+        margin-left: 120px ;
+    }
     #cabecera{
         flex-wrap: wrap;
     }
-
     #logo{
         width: 200px;
         margin: auto;
     }
+}
+
+@media(max-width:700px){
 
     aside{  
         float: none;
@@ -210,4 +230,4 @@ footer a{
         width: 100%;
     }
 
-   }
+}

@@ -310,12 +310,20 @@ function crearTablaFr(){
 }
 
 function addTendenciaCtrl(){
-    var fila = '<tr><td align = "center">'+tc.promedio()+'</td><td align = "center">'+tc.mediana()+'</td><td align = "center">'+tc.desviacionEstandar()+'</td><td align = "center">'+tc.moda()+'</td></tr>';
+    /* var fila = '<tr><td align = "center">'+tc.promedio()+'</td><td align = "center">'+tc.mediana()+'</td><td align = "center">'+tc.desviacionEstandar()+'</td><td align = "center">'+tc.moda()+'</td></tr>';
     var agFila = document.createElement("tr");
 
     agFila.innerHTML = fila;
-    document.getElementById("tendenciaCentral").appendChild(agFila);
+    document.getElementById("tendenciaCentral").appendChild(agFila);*/
 
+   var media = document.getElementById("media-v"); 
+   var mediana = document.getElementById("mediana-v");
+   var des_stand = document.getElementById("desv-estandar-v");
+   var moda = document.getElementById("moda-v");
+        media.innerHTML = tc.promedio();
+        mediana.innerHTML = tc.mediana();
+        des_stand.innerHTML = tc.desviacionEstandar();
+        moda.innerHTML = tc.moda();
 
 }
 
@@ -333,7 +341,7 @@ function eventos(){
 
     document.getElementById("crearTabla").addEventListener("click",function(){
         limpiarTabla('tablaF');
-        limpiarTabla('tendenciaCentral');
+        //limpiarTabla('tendenciaCentral');
         datosAñadir();
         crearTablaFr();
         addTendenciaCtrl();
@@ -371,7 +379,7 @@ function eventos(){
     document.getElementById("ajustarT").addEventListener("click",function(){
 
             limpiarTabla('tablaF');
-            limpiarTabla('tendenciaCentral');
+            //limpiarTabla('tendenciaCentral');
             datosAñadir();
             crearTablaFr();
             addTendenciaCtrl();
