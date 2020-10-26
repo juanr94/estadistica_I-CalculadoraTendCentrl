@@ -234,6 +234,10 @@ function deleteRow(id,row) {
     document.getElementById(id).deleteRow(row);
 }
 
+function redondear(numero){
+    return parseFloat(Math.round(numero * 100) / 100).toFixed(2);
+}
+
 function añadirValores(){
     var dt = document.getElementById("dato").value;
     var limpiar = document.getElementById("dato");
@@ -302,7 +306,7 @@ function crearTablaFr(){
     var agFila = [];
     for(var i = 0; i< tc.nIntervalo(); i++){
         
-        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+tc.limInferior()[i]+' - '+tc.limSuperior()[i]+')'+'</td><td>'+Math.round(tc.marcaClase()[i]).toFixed(2)+'</td><td>'+tc.frecuencia()[i]+'</td><td>'+tc.frecuenciaRelativa()[i]+'</td><td>'+tc.frecuenciaRelativaAcumulada()[i]+'</td><tr>';
+        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+redondear(tc.limInferior()[i])+' - '+redondear(tc.limSuperior()[i])+')'+'</td><td>'+redondear(tc.marcaClase()[i])+'</td><td>'+redondear(tc.frecuencia()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i])+'</td><td>'+redondear(tc.frecuenciaRelativaAcumulada()[i])+'</td><tr>';
         agFila[i] = document.createElement("tr");
         agFila[i].innerHTML = fila[i];
         document.getElementById("tablaF").appendChild(agFila[i]);
@@ -320,10 +324,10 @@ function addTendenciaCtrl(){
    var mediana = document.getElementById("mediana-v");
    var des_stand = document.getElementById("desv-estandar-v");
    var moda = document.getElementById("moda-v");
-        media.innerHTML = tc.promedio();
-        mediana.innerHTML = tc.mediana();
-        des_stand.innerHTML = tc.desviacionEstandar();
-        moda.innerHTML = tc.moda();
+        media.innerHTML = redondear(tc.promedio());
+        mediana.innerHTML = redondear(tc.mediana());
+        des_stand.innerHTML = redondear(tc.desviacionEstandar());
+        moda.innerHTML = redondear(tc.moda());
 
 }
 
