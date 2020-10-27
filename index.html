@@ -19,109 +19,79 @@
     <hr>
     <br>
     <!--===============================================-->
-    <aside>
-        <div>
-            <div>
-                <table id = "Datos">
-                    <tr>
-                        <td>
-                            <input type="text" name="insertDat" id="dato" placeholder="Añade datos...">
-                        </td>
-                        <td>
-                            <button value="agregar" id="agregarDat">+</button>
-                        </td>
-                    </tr>
-                </table>
-                
-                <button id="crearTabla">Crear tabla frecuencia</button>
-                    
-            </div>
-            <div>
-                <h3 id="Cabeceras">DATOS</h3>
-            </div>
-            
-            <div id="contenedorTblDatos">
-                <table id = "tablaDts">
-                    
-                </table>
-            </div>
-
-            <div >
-              
-            </div>
-        </div>
-    </aside>
+    <section id="contenedor">
+        <div id="contenido-tabla">
+           
+            <div id="contenedorTablaF">
     
-    <section>
-
-        <div id="contenedorTablaF">
-
-            <table>
-
-                <tr>
-                    <td colspan="3"> <h3>Ajustar intervalos</h3></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" id="check" disabled = "false"></td>
-                    <td><input type = "number" min = "0" max = "100" value = "0" disabled = "false" id="noIntervalo"></td>
-                    <td><button disabled = "false" id="ajustarT">Ajustar</button></td>
-                </tr>
-               
-            </table>
- 
-            <h3>TABLA DE FRECUENCIA</h3>
-            <div id="contTablaF">
-               <table id="tablaF">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Clase</th>
-                            <th>x</th>
-                            <th>f</th>
-                            <th>fr</th>
-                            <th>F</th>
-                        </tr>
-                    </thead>
-
-                </table> 
+                <table>
+                    <tr>
+                        <td><input type="text" name="insertDat" id="dato" placeholder="Agregar datos..." maxlength="10"></td>
+                        <td><button value="agregar" id="agregarDat">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="crearTabla">Crear tabla frecuencia</button></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><input type="checkbox" id="check" disabled = "false"></td>
+                        <td><input type = "number" min = "0" max = "100" value = "0" disabled = "false" id="noIntervalo"></td>
+                        <td><button disabled = "false" id="ajustarT">Ajustar Intervalo</button></td>
+                    </tr>
+                   
+                </table>
+     
+                <h3>TABLA DE FRECUENCIA</h3>
+                <div id="contTablaF">
+                   <table id="tablaF">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Clase</th>
+                                <th>x</th>
+                                <th>f</th>
+                                <th>fr</th>
+                                <th>F</th>
+                            </tr>
+                        </thead>
+    
+                    </table> 
+                </div>
+                
+                <br>
+                <br>
+                <hr>
+                <div id="tendencia-central">
+                    <div id="contenido">
+                        <div id="titulo">
+                            <p id="media">Media:</p>
+                            <p id="mediana">Mediana:</p>
+                            <p id="desv-estandar">Desviación estándar:</p>
+                            <p id="moda">Moda:</p>
+                        </div>
+                        <div id="valores">
+                            <p id="media-v"></p>
+                            <p id="mediana-v"></p>
+                            <p id="desv-estandar-v"></p>
+                            <p id="moda-v"></p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div id="tabla-izq">
+                <div>
+                    <h3 id="Cabeceras">DATOS</h3>
+                </div>
+                
+                <div id="contenedorTblDatos">
+                    <table id = "tablaDts">
+                        
+                    </table>
+                </div>
             </div>
             
-            <br>
-            <br>
-            <hr>
-            <div id="tendencia-central">
-                <div id="contenido">
-                    <div id="titulo">
-                        <p id="media">Media:</p>
-                        <p id="mediana">Mediana:</p>
-                        <p id="desv-estandar">Desviación estándar:</p>
-                        <p id="moda">Moda:</p>
-                    </div>
-                    <div id="valores">
-                        <p id="media-v"></p>
-                        <p id="mediana-v"></p>
-                        <p id="desv-estandar-v"></p>
-                        <p id="moda-v"></p>
-                    </div>
-                </div>
-                <!--<ul>
-                    <li id="media">Media</li>
-                    <li id="mediana">Mediana</li>
-                    <li id="desv-estandar">Desviación estándar</li>
-                    <li id="moda">Moda</li>
-                </ul>
-            </div>
-            <table id="tendenciaCentral">
-                    <tr>
-                        <th>Media</th>
-                        <th>Mediana</th>
-                        <th>Desviación estándar</th>
-                        <th>Moda</th>
-                    </tr>
-            </table>-->
-
         </div>
-        
     </section>
     <br>
     <footer>

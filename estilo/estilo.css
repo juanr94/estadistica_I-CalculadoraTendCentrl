@@ -1,7 +1,7 @@
 
 @font-face{
-    font-family: "digital";
-    src: url("/fuentes/Tetroserbogia.ttf");
+    font-family: 'digital';
+    src: url('../fuentes/cambria.ttc');
 }
 
 body{
@@ -9,33 +9,36 @@ body{
     background: -moz-linear-gradient(top, #003c8f, #ffffff);
     background: -o-linear-gradient(top, #003c8f, #ffffff);
     background-repeat: no-repeat;
-    font-family: "digital";
-}
-
-
-aside{   
-    width: 260px;
-    height: 500px;
-    margin-left:5%;
-    border: 2px solid #f9f9fa;
-    float: left;
+    font-family: 'digital';
 }
 
 #contenedorTblDatos{
-    height: 350px;
+    height: 450px;
     overflow: auto;
 }
 section{
- width: 70%;
- margin-left:27%;
+    display: table; 
+    border-spacing: 10px;
+    width: 100%;
 }
+
+#contenido-tabla{
+    display: table-row;
+   
+}
+
+#tabla-izq{
+    display: table-cell;
+    width: 100px;
+}
+
 
 aside div{
     width: 90%;
     margin: 10px auto;
 }
 #logo{
-    width: 200px;
+    width: 45vh;
     transition: 2s;
 }
 #titulos {
@@ -46,10 +49,10 @@ h1 {
     font-family: "digital";
     text-align: center;
     color: #ffffff;
+    
 }
 
 h2 {
-  
     text-align: center;
     color: #ffffff;
 }
@@ -73,6 +76,10 @@ h2 {
 
 #dato{
     padding: 5px;
+    font-family: 'digital';
+    font-size: 3vh;
+    background: #2a2e33;
+    color: white;
 }
 
 #Cabeceras{
@@ -83,8 +90,9 @@ h2 {
 
 #tablaDts{
     margin-left: 5%;
-    font: bold 18px verdana, sans-serif;
+    font-family: 'digital';
     color: #003b8e;
+    width: 100%;
 }
 #btnE{
     background: rgb(245, 95, 95);
@@ -96,7 +104,7 @@ h2 {
 #crearTabla{
     background: none;
     border: none;
-    color: #003b8e;
+    color: #fcfcfd;
     border-bottom: 1px solid #003b8e;
     padding: 3px;
     font-size: 15px;
@@ -106,9 +114,9 @@ h2 {
 }
 
 #contenedorTablaF{
-    width: 80%;
+    width: 100%;
     margin: auto;
-    
+    display: table-cell;
 }
 
 #contTablaF{
@@ -140,11 +148,11 @@ h2 {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    font: bold 12px verdana, sans-serif;
+    font-family: 'digital';
 }
 
 #tablaF th, #tablaF td{
-    padding: 20px;
+    padding: 3vh;
 }
 
 #tablaF thead{
@@ -214,25 +222,25 @@ footer a{
 
 @media(max-width:700px){
 
-    aside{  
-        float: none;
-    }
-
     section{
-        margin: 5%;
-        width: 90%;
+       display: inline;
+        width: 100%;
         
     }
 
+    #contenido-tabla{
+        display: block;
+    }
+    
+    #tabla-izq{
+        display: block;
+        width: 100px;
+    }
     #contenedorTablaF{
-        margin: 0;
+        display: inline;
         width: 100%;
     }
     
-    #contTablaF{
-        width: 100%;
-    }
-
     #tablaF{
         width: 100%;
     }

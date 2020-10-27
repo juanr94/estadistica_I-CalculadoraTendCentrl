@@ -246,7 +246,7 @@ function añadirValores(){
 
         if(dts !=null)
         {
-            if(!isNaN(dts) && isFinite(dts) && dts > 0){
+            if(!isNaN(dts) && isFinite(dts) && (dts > 0) && (typeof(dts) === 'number')){
                 insRow("tablaDts");
                 btnCrearT.disabled = false;
                 btnCrearT.style.cursor = 'pointer';
@@ -365,17 +365,27 @@ function eventos(){
     document.getElementById("check").addEventListener("change",function(){
         var nInter = document.getElementById("noIntervalo");
         var btnInter = document.getElementById("ajustarT");
+        var txtDatos = document.getElementById("dato");
+        var btnCrearTbl = document.getElementById("crearTabla");
         nInter.value = 0;
         if(this.checked){
             nInter.disabled = false;
             btnInter.disabled = false;
             btnInter.style.cursor = 'pointer';
+            txtDatos.disabled = true;
+            txtDatos.style.cursor = 'not-allowed';
+            btnCrearTbl.disabled = true;
+            btnCrearTbl.style.cursor = 'not-allowed';
             
         }
         else{
             nInter.disabled = true;
             btnInter.disabled = true;
             btnInter.style.cursor = 'not-allowed';
+            txtDatos.disabled = false;
+            txtDatos.style.cursor = 'pointer';
+            btnCrearTbl.disabled = false;
+            btnCrearTbl.style.cursor = 'pointer';
         }
         
     },false);
