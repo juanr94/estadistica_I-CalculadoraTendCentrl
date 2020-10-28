@@ -93,6 +93,7 @@ h2 {
     font-family: 'digital';
     color: #003b8e;
     width: 100%;
+    transition-duration: 2s;
 }
 #btnE{
     background: rgb(245, 95, 95);

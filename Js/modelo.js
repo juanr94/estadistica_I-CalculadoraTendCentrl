@@ -30,11 +30,11 @@ class tendeciaCentral{
                 mayor = this.obtenerDatos()[i];
             }
         }
-        return mayor + 1;
+        return mayor;
     }
 
     nIntervalo(){
-        var k;
+        var k = 0;
         var nInt = document.getElementById("noIntervalo").value;
 
         if(parseInt(nInt) === 0)
@@ -51,12 +51,13 @@ class tendeciaCentral{
 
     rango(){
         var r = this.datoMayor() - this.datoMenor();
+        
         return r;
     }
 
     amplitud(){
         var a = this.rango() / this.nIntervalo();
-        return a;
+        return a + 0.00000005;
     }
 
     limInferior(){
@@ -103,9 +104,9 @@ class tendeciaCentral{
                {
                   c++;
                     
-                }   
-
+                } 
             }
+
             f[i] = c;
         }
         return f;
@@ -167,7 +168,6 @@ class tendeciaCentral{
         var cantDatos = this.obtenerDatos().length;
         var parinpar = 0;
         var me = 0;
-        var posicion = 0;
 
         if(cantDatos % 2 == 0)
         {
@@ -188,11 +188,19 @@ class tendeciaCentral{
         
         }
 
+       
+
         if(me === 0){
             for(var i = 0; i < this.nIntervalo(); i++ ){
                 if(this.frecuenciaRelativaAcumulada()[i] > parinpar){
-                    me = this.limInferior()[i] + (((this.obtenerDatos().length/2) - this.frecuenciaRelativaAcumulada()[i-1]) / this.frecuencia()[i]) * this.amplitud();
-                    break;
+                    if (isNaN(this.frecuenciaRelativaAcumulada()[i-1])){
+                        me = this.limInferior()[i] + (((this.obtenerDatos().length/2) - 0) / this.frecuencia()[i]) * this.amplitud();
+                        break;
+                    }
+                    else{
+                        me = this.limInferior()[i] + (((this.obtenerDatos().length/2) - this.frecuenciaRelativaAcumulada()[i-1]) / this.frecuencia()[i]) * this.amplitud();
+                        break;
+                    }
                 }
                 
             }
@@ -214,9 +222,20 @@ class tendeciaCentral{
             }
         }
 
+        if(isNaN(this.frecuencia()[p-1])){
+            mo = this.limInferior()[p] + ((this.frecuencia()[p] - 0) / ((this.frecuencia()[p] - 0) + (this.frecuencia()[p] - this.frecuencia()[p+1]))) * this.amplitud();
+        }
+        else if (isNaN(this.frecuencia()[p+1]))
+        {
+            mo = this.limInferior()[p] + ((this.frecuencia()[p] - this.frecuencia()[p-1]) / ((this.frecuencia()[p] - this.frecuencia()[p-1]) + (this.frecuencia()[p] - 0))) * this.amplitud();
+        }
+        else{
+            mo = this.limInferior()[p] + ((this.frecuencia()[p] - this.frecuencia()[p-1]) / ((this.frecuencia()[p] - this.frecuencia()[p-1]) + (this.frecuencia()[p] - this.frecuencia()[p+1]))) * this.amplitud();
+        }
         
-        mo = this.limInferior()[p] + ((this.frecuencia()[p] - this.frecuencia()[p-1]) / ((this.frecuencia()[p] - this.frecuencia()[p-1]) + (this.frecuencia()[p] - this.frecuencia()[p+1]))) * this.amplitud();
-
+        if (isNaN(mo)){
+            mo = 0;
+        }
 
         return mo;
     }
@@ -351,6 +370,7 @@ function eventos(){
         addTendenciaCtrl();
         var check = document.getElementById("check");
         check.disabled = false;
+        console.log('Rango '+ tc.rango());
     },false);
 
     document.getElementById("dato").addEventListener("keydown",function(e){
