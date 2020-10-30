@@ -352,6 +352,15 @@ function addTendenciaCtrl(){
 
 function eventos(){
 
+    document.getElementById("add-datos").addEventListener('click',function(){
+        var v_modal = document.getElementById("fondo-modal");
+        v_modal.style.display = "inline"; 
+    },false);
+
+    document.getElementById("modal-cerrar").addEventListener('click',function(){
+        var v_modal = document.getElementById("fondo-modal");
+        v_modal.style.display = "none"; 
+    },false);
 
     document.getElementById('tablaDts').addEventListener('click',tableclick,false);
 
