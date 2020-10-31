@@ -1,20 +1,28 @@
 
 @font-face{
-    font-family: 'digital';
-    src: url('../fuentes/Tetroserbogia.ttf');
+    font-family: "SansPro";
+    src: url("../fuentes/SourceSansPro-Regular.otf");
+}
+
+@font-face{
+    font-family: "SansProBlack";
+    src: url("../fuentes/SourceSansPro-Black.otf");
+}
+
+@font-face{
+    font-family: "SansProLigth";
+    src: url("../fuentes/SourceSansPro-Light.otf");
 }
 
 *{
     padding: 0;
     margin: 0%;
+    font-family:"SansPro";
+    font-weight: 400!important;
 }
 
 
 body{
-    /*background: -webkit-linear-gradient(top,#003c8f, #ffffff);
-    background: -moz-linear-gradient(top, #003c8f, #ffffff);
-    background: -o-linear-gradient(top, #003c8f, #ffffff);
-    background-repeat: no-repeat;*/
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -79,6 +87,7 @@ body{
 }
 #titulo-modal {
     margin-top: -20px;
+    font-family: "SansProBlack";
 }
 #cont-tabla-dts{
     height: 200px;
@@ -118,11 +127,6 @@ section{
    
 }
 
-#contTablaF h1{
-    width: 100%;
-    background-color:#1564bf;
-    border-radius: 20px 20px 0 0 ;
-}
 #logo{
     width: 35vh;
 }
@@ -130,10 +134,16 @@ section{
    text-align: center;
    width: 100%;
 }
-h1 {
+#titulos h1,h2, #fondo-modal h1 {
     text-align: center;
-    color: #ffffff;
+    color: #ffffff;  
+    font-family: "SansProBlack";
+    font-size: 5vh;
     
+}
+
+section h1{
+    text-align: center;
 }
 
 #dist-binomial-normal{
@@ -184,10 +194,6 @@ h1 {
     color: #003c8f;
 }
 
-h2 {
-    text-align: center;
-    color: #ffffff;
-}
 header{
     background-color: #003b8e;
     width: 100%;
@@ -233,7 +239,6 @@ header{
 
 #tablaDts{
     margin-left: 5%;
-    font-family: 'digital';
     color: #003b8e;
 }
 #btnE{
@@ -268,6 +273,7 @@ header{
     overflow: auto;
     height: 400px;
     width: 100%;
+    border: 1px solid #003b8e;
     border-radius: 30px 30px 0 0;
 }
 
@@ -293,23 +299,24 @@ header{
     color: white;
 }
 
-#tablaF{
+#contTablaF #tablaF{
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    font-family: 'digital';    
 }
 
 #tablaF th, #tablaF td{
     padding: 3vh;
-    
+}
+
+#tablaF thead tr th{
+    background-color:#1564bf ;
+    color: white;
+   
 }
 
 #tablaF thead{
-    background-color:#1564bf ;
     border-bottom:solid 5px #003b8e;
-    color: white;
-   
 }
 
 #tablaF tr:not(:nth-child(1)){
@@ -347,15 +354,24 @@ header{
 
 
 footer{
-    background: #003b8e;
+    background: #011c42;
     color: white;
     margin: 0;
-    font: bold 12px verdana, sans-serif;
+    font-family: "SansProLigth";
     padding: 5px;
+    line-height: 30px;
+}
+
+footer p{
+   text-align: center;
 }
 
 footer a{
     color: white;
+}
+
+footer #logo-uni{
+    margin: 1%;
 }
 
 @media(max-width:975px){

@@ -1,4 +1,5 @@
 class binomial{
+
     constructor(n,p,x){
         this.n = n;
         this.p = p;
@@ -63,6 +64,7 @@ function agregarDtsBinomial() {
     let n = parseInt(document.getElementById("n-ensayos").value);
     let p = parseFloat(document.getElementById("probabilidad").value);
     let x = parseInt(document.getElementById("x").value);
+    
     let b = new binomial(n,p,x);
 
     if(selecion.value === "Distribución binomial")
@@ -73,7 +75,6 @@ function agregarDtsBinomial() {
     {
         document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomialAcumulada(); 
     }
-
     
 }
 

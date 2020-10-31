@@ -13,7 +13,8 @@
             <img src="./logo/LogoUNI.png" alt="" id="logo">
             <hgroup id="titulos">
                 <h1>CALCULADORA ESTADÍSTICA</h1>
-                <h2>Tendencias central y tabla de frecuencia</h2> 
+                <br>
+                <h2>Tabla de frecuencia, tendencias cental y distribución binomial</h2> 
             </hgroup>
         </div>
     </header>
@@ -85,9 +86,10 @@
                     </div>
                 </div>  
      
-                
+                <br>
+                <h1 style="color: #003c8f;">TABLA DE FRECUENCIA</h1>
+                <br>
                 <div id="contTablaF">
-                    <h1>TABLA DE FRECUENCIA</h1>
                    <table id="tablaF">
                         <thead>
                             <tr>
@@ -96,9 +98,13 @@
                                 <th>x</th>
                                 <th>f</th>
                                 <th>fr</th>
+                                <th>fr%</th>
                                 <th>F</th>
                             </tr>
                         </thead>
+                        <tbody id="cuerpoT">
+
+                        </tbody>
     
                     </table> 
                 </div>
@@ -155,22 +161,14 @@
     </section>
     <br>
     <footer>
+        <img src="./logo/logo_uni.png" id="logo-uni">
         <p>Proyecto de estadística I, calculadora de tendencias centrales y tabla de frecuencia.</p>
         <p>Profesor: Marlon Antonio Hurtado Obando.</p>
         <p>Alumno: José Luis Moreno López.</p>
+        <br>
+        <hr>
         <p class="derechos"> Copyright ©<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | realizado por <a href="mailto:jluismlopez5@gmail.com">José Luis Moreno López.</a> </p>
     </footer>
-    <script>
-        
-
-        /*document.getElementById("b-acumulada").addEventListener("click",function(){
-            var n = document.getElementById("n-ensayos").value;
-        var p = document.getElementById("probabilidad").value;
-        var x = document.getElementById("x").value;
-        var nInt = document.getElementById("noIntervalo").value;
-            alert(n);
-        });*/
-    </script>
     <script src="./Js/modelo.js" type="text/javascript"></script>
     <script src="./Js/binomial.js" type="text/javascript"></script>
 </body>

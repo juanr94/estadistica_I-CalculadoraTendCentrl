@@ -325,7 +325,7 @@ function crearTablaFr(){
     var agFila = [];
     for(var i = 0; i< tc.nIntervalo(); i++){
         
-        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+redondear(tc.limInferior()[i])+' - '+redondear(tc.limSuperior()[i])+')'+'</td><td>'+redondear(tc.marcaClase()[i])+'</td><td>'+redondear(tc.frecuencia()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i])+'</td><td>'+redondear(tc.frecuenciaRelativaAcumulada()[i])+'</td><tr>';
+        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+redondear(tc.limInferior()[i])+' - '+redondear(tc.limSuperior()[i])+')'+'</td><td>'+redondear(tc.marcaClase()[i])+'</td><td>'+redondear(tc.frecuencia()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i]*100)+'</td><td>'+redondear(tc.frecuenciaRelativaAcumulada()[i])+'</td><tr>';
         agFila[i] = document.createElement("tr");
         agFila[i].innerHTML = fila[i];
         document.getElementById("tablaF").appendChild(agFila[i]);
