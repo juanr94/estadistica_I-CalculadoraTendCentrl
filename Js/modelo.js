@@ -247,7 +247,7 @@ var tc = new tendeciaCentral();
 
 var btnCrearT = document.getElementById("crearTabla");
 
-btnCrearT.disabled = true;
+
 
 function deleteRow(id,row) {
     document.getElementById(id).deleteRow(row);
@@ -260,8 +260,7 @@ function redondear(numero){
 function añadirValores(){
     var dt = document.getElementById("dato").value;
     var limpiar = document.getElementById("dato");
-    var dts = parseFloat(dt);
-        
+    var dts = parseFloat(dt);  
 
         if(dts !=null)
         {
@@ -283,11 +282,20 @@ function añadirValores(){
 }
 
 function tableclick(e) {
-    if(!e)
+    var tablaDatos = document.getElementById("tablaDts");
+    var btnAgregarDatos = document.getElementById("crearTabla");
+
+    if(!e){
         e = window.event;
-    
-    if(e.target.value == "Delete")
+    }
+
+    if(e.target.value == "Delete"){
         deleteRow('tablaDts', e.target.parentNode.parentNode.rowIndex );
+        if(tablaDatos.rows.length <= 1){
+            btnCrearT.disabled = true;
+            btnAgregarDatos.style.cursor = "not-allowed";
+        } 
+    }   
 }
 
 function insRow(id) {
@@ -297,7 +305,7 @@ function insRow(id) {
     var y = x.insertCell(0);
     var z = x.insertCell(1);
     y.innerHTML = dato;
-    z.innerHTML ='<button id="btnE" name="btn" value = "Delete" >X</button>';
+    z.innerHTML ='<button id="btnE" name="btn" value = "Delete" >x</button>';
 }
 
 function datosAñadir(){
@@ -333,12 +341,6 @@ function crearTablaFr(){
 }
 
 function addTendenciaCtrl(){
-    /* var fila = '<tr><td align = "center">'+tc.promedio()+'</td><td align = "center">'+tc.mediana()+'</td><td align = "center">'+tc.desviacionEstandar()+'</td><td align = "center">'+tc.moda()+'</td></tr>';
-    var agFila = document.createElement("tr");
-
-    agFila.innerHTML = fila;
-    document.getElementById("tendenciaCentral").appendChild(agFila);*/
-
    var media = document.getElementById("media-v"); 
    var mediana = document.getElementById("mediana-v");
    var des_stand = document.getElementById("desv-estandar-v");
@@ -365,10 +367,9 @@ function eventos(){
     document.getElementById('tablaDts').addEventListener('click',tableclick,false);
 
     document.getElementById('agregarDat').addEventListener("click",function(){
-        var limpiar = document.getElementById("dato");
-        añadirValores();
-        limpiar.value = "";
-
+            var limpiar = document.getElementById("dato");
+            añadirValores();
+            limpiar.value = "";
     },false);
 
     document.getElementById("crearTabla").addEventListener("click",function(){

@@ -134,12 +134,17 @@ section{
    text-align: center;
    width: 100%;
 }
-#titulos h1,h2, #fondo-modal h1 {
+#titulos h1, #titulos h2, #fondo-modal h1 {
     text-align: center;
     color: #ffffff;  
     font-family: "SansProBlack";
     font-size: 5vh;
     
+}
+
+#contTablaF h2{
+    font-family: "SansProBlack";
+    font-size: 3vh;
 }
 
 section h1{
@@ -235,8 +240,6 @@ header{
     text-shadow: 2px 2px #003b8e5b;
 }
 
-
-
 #tablaDts{
     margin-left: 5%;
     color: #003b8e;
@@ -245,8 +248,10 @@ header{
     background: rgb(245, 95, 95);
     border: none;
     color: honeydew;
-    padding: 3px;
-    font-size: 15px;
+    border-radius: 10px;
+    padding: 1.25px 5px;
+    cursor: pointer;
+    font-size: 10px;
 }
 #crearTabla{
     background: none;
