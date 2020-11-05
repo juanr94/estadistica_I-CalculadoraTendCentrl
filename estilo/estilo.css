@@ -89,6 +89,8 @@ body{
     margin-top: -20px;
     font-family: "SansProBlack";
 }
+
+
 #cont-tabla-dts{
     height: 200px;
     width: 100px;
@@ -359,6 +361,11 @@ header{
    width: 150px; 
 }
 
+
+#msm-err-binomial{
+    text-align: center;
+    color: white;
+}
 
 footer{
     background: #011c42;

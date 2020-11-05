@@ -65,23 +65,31 @@ function agregarDtsBinomial() {
     let p = parseFloat(document.getElementById("probabilidad").value);
     let x = parseInt(document.getElementById("x").value);
     
-    if(n >= x){
-        let b = new binomial(n,p,x);
+    if(n >= x ){
+        if (n > 0 && x >= 0 && (Number.isInteger(n) && Number.isInteger(x))){
+            let b = new binomial(n,p,x);
 
-        if(selecion.value === "Distribución binomial")
-        {
-            document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomial(); 
+            if(selecion.value === "Distribución binomial")
+            {
+                document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomial(); 
+            }
+            else if (selecion.value === "Distribución binomial acumulada")
+            {
+                document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomialAcumulada(); 
+            }
+            document.getElementById("msm-err-binomial").style.color = "rgba(0, 0, 0, 0)";
         }
-        else if (selecion.value === "Distribución binomial acumulada")
+        else
         {
-            document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomialAcumulada(); 
+            document.getElementById("msm-err-binomial").style.color = "rgba(255, 0, 0, 0.747)";
         }
     }else{
         alert("El número de éxitos no debe ser mayor al número de ensayo (n > x ó n = x)");
     } 
 }
 
-document.getElementById("n-ensayos").addEventListener("keypress", function(e){
+// Valida entradas por teclado
+/*document.getElementById("n-ensayos").addEventListener("keypress", function(e){
     e.preventDefault();
 },false);
 
@@ -91,6 +99,6 @@ document.getElementById("probabilidad").addEventListener("keypress", function(e)
 
 document.getElementById("x").addEventListener("keypress", function(e){
     e.preventDefault();
-},false);
+},false);*/
 
 document.getElementById("b-acumulada").addEventListener("click",agregarDtsBinomial,false);
