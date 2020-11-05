@@ -394,14 +394,27 @@ footer #logo-uni{
 
 @media(max-width:700px){
 
-    section{
-       display: inline;
-        width: 100%;
-        
+    #v-modal{
+        height: 90%;
     }
 
-    #v-modal{
-        width: 80%;
+    #modal-cerrar{
+        width: 30px;
+        height: 30px;
+    }
+
+    #titulo-modal {
+        margin-top: 20px;
+    }
+
+    #crearTabla{
+        background: none;
+        border: 1px solid tomato;
+        color: tomato;
+        padding: 6px;
+        border-radius: 50px;
+        font-size: 10px;
+        cursor: not-allowed;
     }
 
     #dato{
