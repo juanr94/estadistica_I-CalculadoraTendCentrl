@@ -55,7 +55,6 @@ body{
 #v-modal{
     background: linear-gradient(0deg,white 85%, #003c8f 15%);
     background: -webkit-linear-gradient(90deg,white 85%, #003c8f 15%);
-    background: -o-repeating-linear-gradient(90deg,white 85%, #003c8f 15%);
     background: -moz-linear-gradient(90deg,white 85%, #003c8f 15%);
     
     width: 40%;
