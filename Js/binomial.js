@@ -65,17 +65,32 @@ function agregarDtsBinomial() {
     let p = parseFloat(document.getElementById("probabilidad").value);
     let x = parseInt(document.getElementById("x").value);
     
-    let b = new binomial(n,p,x);
+    if(n >= x){
+        let b = new binomial(n,p,x);
 
-    if(selecion.value === "Distribución binomial")
-    {
-        document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomial(); 
-    }
-    else if (selecion.value === "Distribución binomial acumulada")
-    {
-        document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomialAcumulada(); 
-    }
-    
+        if(selecion.value === "Distribución binomial")
+        {
+            document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomial(); 
+        }
+        else if (selecion.value === "Distribución binomial acumulada")
+        {
+            document.getElementById("respuesta-B").innerHTML = "P(X="+x+") = "+b.resultadoBinomialAcumulada(); 
+        }
+    }else{
+        alert("El número de éxitos no debe ser mayor al número de ensayo (n > x ó n = x)");
+    } 
 }
+
+document.getElementById("n-ensayos").addEventListener("keypress", function(e){
+    e.preventDefault();
+},false);
+
+document.getElementById("probabilidad").addEventListener("keypress", function(e){
+    e.preventDefault();
+},false);
+
+document.getElementById("x").addEventListener("keypress", function(e){
+    e.preventDefault();
+},false);
 
 document.getElementById("b-acumulada").addEventListener("click",agregarDtsBinomial,false);
