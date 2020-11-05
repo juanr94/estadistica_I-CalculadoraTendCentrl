@@ -116,6 +116,7 @@ body{
     display: table-cell;
 }
 
+
 section{
     display: table; 
     border-spacing: 10px;
@@ -232,6 +233,7 @@ header{
     color: white;
     border-radius: 10px;
     border-style: hidden;
+    width: 100%;
 }
 
 #Cabeceras{
@@ -427,6 +429,26 @@ footer #logo-uni{
 
     #dist-binomial-normal{
         width: 80%;
+    }
+
+    @media(min-width:400px){
+        #v-modal{
+          height: 90%;
+        }
+
+        #titulo-modal {
+            margin-top: 10px;
+            font-family: "SansProBlack";
+        }
+
+        #dato{
+            width: 100%;
+        }
+
+        #crearTabla{
+            padding: 3px;
+            font-size: 3vh;
+        }
     }
 
 }
