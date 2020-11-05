@@ -55,10 +55,11 @@ body{
 #v-modal{
     background: linear-gradient(0deg,white 85%, #003c8f 15%);
     background: -webkit-linear-gradient(90deg,white 85%, #003c8f 15%);
+    background: -o-repeating-linear-gradient(90deg,white 85%, #003c8f 15%);
     background: -moz-linear-gradient(90deg,white 85%, #003c8f 15%);
     
-    width: 70%;
-    height: 80%;
+    width: 40%;
+    height: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -67,7 +68,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 30px;   
+    border-radius: 30px;    
 }
 #modal-cerrar{
     background:crimson;
@@ -75,8 +76,8 @@ body{
     right: 5px;
     color: white;
     top: 5px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -85,7 +86,7 @@ body{
 
 }
 #titulo-modal {
-    margin-top: -2%;
+    margin-top: -20px;
     font-family: "SansProBlack";
 }
 #cont-tabla-dts{
@@ -393,14 +394,14 @@ footer #logo-uni{
 
 @media(max-width:700px){
 
-    #crearTabla{
-        background: none;
-        border: 1px solid tomato;
-        color: tomato;
-        padding: 6px;
-        border-radius: 50px;
-        font-size: 10px;
-        cursor: not-allowed;
+    section{
+       display: inline;
+        width: 100%;
+        
+    }
+
+    #v-modal{
+        width: 80%;
     }
 
     #dato{
