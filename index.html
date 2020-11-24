@@ -157,7 +157,47 @@
                       <option value="0.9"></option>
                       <option value="1"></option>
                   </datalist>
+
+                  <br>
+                  <br>
+                  <hr>
+                  <br>
+                  <br>
+
+                  <h1>DISTRIBUCIÓN NORMAL INVERSA</h1>
+                  <br>
+
+                  <div id="dist-binomial-normal">
+                    <table>
+                        <tr>
+                            <td colspan="3" align="center">DISTRIBUCIÓN INVERSA</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <select name="" id="tipo-binomial">
+                                    <option value="Distribución binomial">Distribución binomial</option>
+                                    <option value="Distribución binomial acumulada">Distribución binomial acumulada</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">area = <input type="number" id="area" value="0" list="lista-probabilidad" min="0" max="1" step="0.01"></td>
+                            <td align="center">µ = <input type="number" id="mu" value="0" min="0" max="100"></td>
+                            <td align="center">σ = <input type="number" id="varianza" value="0" min="0" max="100"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center"> <p id="respuesta-inversa">P(x) = ?</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center"><button id="btn-inversa">Calcular</button></td>
+                        </tr>
+                        
+
+                    </table>
+                  </div>
+
                 </div> 
+
             </div>
             
         </div>
@@ -174,5 +214,6 @@
     </footer>
     <script src="./Js/modelo.js" type="text/javascript"></script>
     <script src="./Js/binomial.js" type="text/javascript"></script>
+    <script src="./Js/binomialInversa.js" type="text/javascript"></script>
 </body>
 </html>
