@@ -22,7 +22,7 @@ function inversaBinomial(){
 
     let bInversa = new BinomialInversa(mu,varianza,a);
 
-    alert(bInversa.calculoInversa());
+    document.getElementById("respuesta-inversa").innerHTML = "x = " + bInversa.calculoInversa();
 
 }
 
