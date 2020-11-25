@@ -115,7 +115,7 @@
                 <br>
                 <br>
                 <div id="distribuciones">
-                  <h1>DISTRIBUCIÓN BINOMIAL</h1>
+                  <h1>DISTRIBUCIONES BINOMIALES</h1>
                   <br>
                   <div id="dist-binomial-normal">
                     <table>
@@ -164,22 +164,29 @@
                   <br>
                   <br>
 
-                  <h1>DISTRIBUCIÓN NORMAL INVERSA</h1>
+                  <h1>DISTRIBUCIÓN NORMAL</h1>
                   <br>
 
                   <div id="dist-binomial-normal">
                     <table>
                         <tr>
-                            <td colspan="3" align="center">DISTRIBUCIÓN INVERSA</td>
+                            <td colspan="3" align="center">DISTRIBUCI0NES NORMALES</td>
                         </tr>
-                       
                         <tr>
-                            <td align="center">area = <input type="number" id="area" value="0" list="lista-probabilidad" min="0" max="1" step="0.01"></td>
+                            <td colspan="3" align="center">
+                                <select name="" id="tipo-normal">
+                                    <option value="Distribución normal">Distribución normal</option>
+                                    <option value="Distribución normal inversa">Distribución normal inversa</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" ><label for="" id="area-x">x = </label> <input type="number" id="area" value="0" list="lista-probabilidad" min="0" max="1" step="0.01"></td>
                             <td align="center">µ = <input type="number" id="mu" value="0" min="0" max="100"></td>
                             <td align="center">σ = <input type="number" id="varianza" value="0" min="0" max="100"></td>
                         </tr>
                         <tr>
-                            <td colspan="3" align="center"> <p id="respuesta-inversa">x = ?</p></td>
+                            <td colspan="3" align="center"> <p id="respuesta-inversa">P(z) = ?</p></td>
                         </tr>
                         <tr>
                             <td colspan="3" align="center"><button id="btn-inversa">Calcular</button></td>
