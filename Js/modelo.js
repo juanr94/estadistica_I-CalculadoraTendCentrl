@@ -288,7 +288,7 @@ function tableclick(e) {
     if(!e){
         e = window.event;
     }
-
+    //Obtiene el elemento que desencadenó un evento específico
     if(e.target.value == "Delete"){
         deleteRow('tablaDts', e.target.parentNode.parentNode.rowIndex );
         if(tablaDatos.rows.length <= 1){
@@ -298,14 +298,16 @@ function tableclick(e) {
     }   
 }
 
+// Pasamos como argumento el id de la tabla que queremos agregarle la fila
 function insRow(id) {
     var dato = document.getElementById("dato").value;
-    var filas = document.getElementById("tablaDts").rows.length;
-    var x = document.getElementById(id).insertRow(filas);
-    var y = x.insertCell(0);
-    var z = x.insertCell(1);
-    y.innerHTML = dato;
-    z.innerHTML ='<button id="btnE" name="btn" value = "Delete" >x</button>';
+    var filas = document.getElementById(id).rows.length;
+    var xFilas = document.getElementById(id).insertRow(filas);
+    //Variables que almacena las celdas (número y el boton de eliminar )
+    var yCelda = xFilas.insertCell(0);
+    var zCelda = xFilas.insertCell(1);
+    yCelda.innerHTML = dato;
+    zCelda.innerHTML ='<button id="btnE" name="btn" value = "Delete" >x</button>';
 }
 
 function datosAñadir(){
@@ -331,11 +333,18 @@ function limpiarTabla(id){
 function crearTablaFr(){
     var fila = [];
     var agFila = [];
+    // Se rrecorre latabla con la cantidad de números de intervalos posibles
     for(var i = 0; i< tc.nIntervalo(); i++){
+        // Se agregra al array cada uno de los valores que tendrá cada fila y sus celdas
+        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+redondear(tc.limInferior()[i])+' - '+redondear(tc.limSuperior()[i])+')'+
+                  '</td><td>'+redondear(tc.marcaClase()[i])+'</td><td>'+redondear(tc.frecuencia()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i])+
+                  '</td><td>'+Math.round(redondear(tc.frecuenciaRelativa()[i])*100)+'</td><td>'+redondear(tc.frecuenciaRelativaAcumulada()[i])+'</td><tr>';
         
-        fila[i] = '<tr><td>'+(i + 1)+'</td><td>'+'['+redondear(tc.limInferior()[i])+' - '+redondear(tc.limSuperior()[i])+')'+'</td><td>'+redondear(tc.marcaClase()[i])+'</td><td>'+redondear(tc.frecuencia()[i])+'</td><td>'+redondear(tc.frecuenciaRelativa()[i])+'</td><td>'+Math.round(redondear(tc.frecuenciaRelativa()[i])*100)+'</td><td>'+redondear(tc.frecuenciaRelativaAcumulada()[i])+'</td><tr>';
+        // Para agregar la fila a la tabla se crea una nueva fila y se almacena a un array
         agFila[i] = document.createElement("tr");
+        // La fila nueva creada se le agrega la fila 
         agFila[i].innerHTML = fila[i];
+        // Con <<appendChild()>> se le agrega la fila a la tabla que deseamos
         document.getElementById("tablaF").appendChild(agFila[i]);
     }
 }
